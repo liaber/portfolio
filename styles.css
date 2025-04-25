@@ -1,0 +1,36 @@
+.grid {
+    margin: 24px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 3 equal columns */
+    gap: 12px;
+}
+  
+.item {
+    /*display: flex;
+    flex-direction: column;*/
+    aspect-ratio: 1 / 1; /* Keeps it square */
+    padding: 24px;
+    background-color: #343633;
+    border-radius: 12px;
+    border: 1px solid #555555;
+    
+}
+
+#large.item {
+    grid-column: 1 / span 2;
+    grid-row: 2 / span 2;
+}
+
+.item * {
+    align-self: flex-start;
+    color: white;
+    font-family: "Inter";
+}
+
+#header {
+    font-size: 36px;
+}
+
+body {
+    background-color: #1E201E;
+}
