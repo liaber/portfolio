@@ -1,13 +1,13 @@
 .grid {
     margin: 24px;
     display: grid;
-    grid-template-columns: repeat(8, 1fr); /* 3 equal columns */
+    grid-template-columns: repeat(auto-fit, minmax(min(8.33%, 300px), 1fr)); /* 3 equal columns */
     gap: 12px;
 }
   
 .item {
-    /*display: flex;
-    flex-direction: column;*/
+    display: flex;
+    flex-direction: column;
     aspect-ratio: 1 / 1; /* Keeps it square */
     padding: 12px;
     background-color: #343633;
@@ -16,9 +16,16 @@
     
 }
 
-#large.item {
-    grid-column: 1 / span 2;
-    grid-row: 2 / span 2;
+.item#hello {
+    aspect-ratio: auto;
+    grid-column: 1 / span 4;
+    grid-row: 1 / span 2;
+}
+
+.item#project-carousel {
+    aspect-ratio: auto;
+    grid-column: 1 / span 3;
+    grid-row: 3 / span 2;
 }
 
 .item * {
@@ -27,14 +34,14 @@
 }
 
 #header {
-    font-size: clamp(12px, 2vw, 48px);
-    margin: 12px;
+    font-size: 4vw;
+    margin: 6px;
     color: #FFFFFF;
 }
 
 #body {
-    font-size: clamp(9px, 1.5vw, 36px);
-    margin: 12px;
+    font-size: 3vw;
+    margin: 6px;
     color: #666666;
 }
 
@@ -51,4 +58,51 @@ body {
     to {
         visibility: hidden;
     }
+}
+
+#project-carousel {
+    position: relative;
+}
+
+#project-carousel button {
+    background-color: rgba(0,0,0,0);
+    border: none;
+    color: #FFFFFF;
+    font-size: clamp(9px, 1.5vw, 36px);
+    font-family: "Inter";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#project-carousel button#left {
+    left: 12px;
+    padding-right: 8px;
+    padding-top: 6px;
+}
+
+#project-carousel button#right {
+    right: 12px;
+    padding-left: 8px;
+    padding-top: 6px;
+}
+
+#left::before,
+#right::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 48px;
+  height: 48px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s ease;
+  z-index: -1;
+}
+
+#left:hover::before,
+#right:hover::before {
+  transform: translate(-50%, -50%) scale(1);
 }

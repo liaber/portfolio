@@ -1,5 +1,5 @@
-const words = [" developer", "n athlete", " Catholic", "n engineer", " student", " learner"];
-const target = document.getElementById("type-target");
+const words = ["an innovator", "a problem-solver", "a creative thinker", "a lifelong learner", "an adaptable", "a critical thinker", "a leader", "a creator", "a self-starter", "a connector", "a mentor", "a team-player", "a tech enthusiast", "a problem-solver", "a change-maker", "a software developer", "a ux/ui designer", "an ai enthusiast"];
+const cursorTarget = document.getElementById("type-target");
 
 let wordIndex = 0;
 let charIndex = 0;
@@ -34,7 +34,7 @@ function loop() {
         setTimeout(loop, 100);
     }
     
-    target.innerHTML = words[wordIndex].substring(0, charIndex);
+    cursorTarget.innerHTML = words[wordIndex].substring(0, charIndex);
 }
 
 loop();
