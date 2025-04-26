@@ -1,4 +1,4 @@
-const words = ["an innovator", "a problem-solver", "a creative thinker", "a lifelong learner", "an adaptable", "a critical thinker", "a leader", "a creator", "a self-starter", "a connector", "a mentor", "a team-player", "a tech enthusiast", "a problem-solver", "a change-maker", "a software developer", "a ux/ui designer", "an ai enthusiast"];
+const words = ["a maker", "a leader", "a coder", "a builder", "a thinker", "an artist", "a writer", "a mentor", "a student", "a helper"];
 const cursorTarget = document.getElementById("type-target");
 
 let wordIndex = 0;

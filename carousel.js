@@ -32,5 +32,5 @@ function setProject() {
     carousel.style.backgroundSize = "cover";
     carousel.style.backgroundPosition = "center";
     carousel.style.backgroundRepeat = "no-repeat";
-    text.innerHTML = projectTitles[currentProject];
+    //text.innerHTML = projectTitles[currentProject];
 }
