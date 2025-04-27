@@ -1,46 +1,29 @@
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
+body {
+    position: relative;
+    /*border: 6px solid black;*/
     height: 100vh;
+    background-color: #1E201E;
+}
+
+.container {
+    width: 50vw;
+    height: 50vh;
+    margin: 0;
+    transform: translate(50%, 50%);
 }
 
 .grid {
-    margin: 24px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(8.33%, 300px), 1fr)); /* 3 equal columns */
-    gap: 12px;
-    width: clamp(50vw,50vw,100vw);
-    height: 50vh;
+    grid-template-columns: repeat(10, 1fr);
+    gap: clamp(2px, 1vw, 12px);
 }
-  
+
 .item {
-    display: flex;
-    flex-direction: column;
-    aspect-ratio: 1 / 1; /* Keeps it square */
-    padding: 12px;
-    background-color: #343633;
-    border-radius: 12px;
     border: 1px solid #555555;
-    
-}
-
-.item * {
-    align-self: flex-start;
-    font-family: "Inter";
-}
-
-#sub {
-    font-size: 12px;
-    margin: 6px;
-    color: #C2E3FF;
-    padding-top: 6px;
-    text-decoration: underline;
-}
-
-body {
-    background-color: #1E201E;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    padding: 24px;
+    background-color: #343633;
 }
 
 .item#hello {
@@ -49,16 +32,25 @@ body {
     grid-row: 1 / span 3;
 }
 
-#hello #header {
-    font-size: clamp(16px,3.5vw,96px);
-    margin: 6px;
+.item#hello #header {
+    font-family: "Inter";
+    font-size: clamp(12px, 3vw, 48px);
     color: #FFFFFF;
+    padding: 12px;
 }
 
-#hello #body {
-    font-size: clamp(12px,2.625vw,72px);
-    margin: 6px;
+.item#hello #body {
+    font-family: "Inter";
+    font-size: clamp(8px, 2vw, 32px);
     color: #666666;
+    padding: 12px;
+}
+
+.item#hello #sub {
+    font-family: "Inter";
+    font-size: 12px;
+    color: #C2E3FF;
+    padding: 12px;
 }
 
 .cursor {
@@ -66,31 +58,34 @@ body {
     color: #AAAAAA;
 }
 
-@keyframes blink {
+@keyframes blink{
     to {
         visibility: hidden;
     }
 }
 
-.item#project-carousel {
+.item#carousel {
     aspect-ratio: 4 / 3;
     grid-column: 5 / span 4;
     grid-row: 1 / span 3;
+    position:relative;
 }
 
-#project-carousel {
-    position: relative;
+.item#carousel #buttons{
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-#project-carousel button {
+.item#carousel button {
     background-color: rgba(0,0,0,0);
     border: none;
-    color: #FFFFFF;
-    font-size: clamp(9px, 1.5vw, 36px);
-    font-family: "Inter";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+}
+
+.item#carousel button img {
+    width: clamp(5px, 2vw, 24px);
+    height: auto;
 }
 
 #project-carousel button#left {
@@ -105,28 +100,53 @@ body {
     padding-top: 6px;
 }
 
-#left::before,
-#right::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 48px;
-  height: 48px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  transition: transform 0.2s ease;
-  z-index: -1;
+.item#portrait {
+    aspect-ratio: 1 / 1;
+    grid-column: 1 / span 2;
+    grid-row: 4 / span 2;
+    background-image: url("Assets/placeholder.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-#left:hover::before,
-#right:hover::before {
-  transform: translate(-50%, -50%) scale(1);
+.item#techstack {
+    aspect-ratio: auto;
+    grid-column: 3 / span 6;
+    grid-row: 4 / span 2;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    width: max-content;
+    animation: scroll 20s linear infinite;
+}
+  
+.carousel-track img {
+    height: 3vw; /* consistent logo height */
+    margin: 0 24px; /* space between logos */
+}
+  
+@keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+}
+
+.item#techstack #header {
+    font-family: "Inter";
+    font-size: clamp(12px, 3vw, 48px);
+    color: #FFFFFF;
+    padding-bottom: 12px;
 }
 
 .item#menu {
-    aspect-ratio: 2 / 5;
+    aspect-ratio: auto;
     grid-column: 9 / span 2;
     grid-row: 1 / span 5;
 }
@@ -142,7 +162,30 @@ body {
     list-style: none;
 }
 
+.item#menu li#selected {
+    font-family: "Inter";
+    font-size: 20px;
+    color: #FFFFFF;
+    background-color: #666666;
+    padding: 10%;
+    width: 100%;
+    border-radius: 24px;
+    transition: background-color 1s ease, color 1s ease;
+    /*animation: fade-out 0.5s ease 0s 1 forwards;*/
+}
+
+.item#menu li#selected:hover {
+    font-size: 20px;
+    padding: 10%;
+    width: 100%;
+    border-radius: 24px;
+    background-color: #FFFFFF;
+    color: #1E201E;
+    /*animation: fade-in 0.5s ease 0s 1 forwards;*/
+}
+
 .item#menu li {
+    font-family: "Inter";
     font-size: 20px;
     color: #FFFFFF;
     background-color: #343633;
@@ -162,71 +205,3 @@ body {
     color: #1E201E;
     /*animation: fade-in 0.5s ease 0s 1 forwards;*/
 }
-
-@keyframes fade-in {
-    from {
-        background-color: #343633;
-        color: #FFFFFF;
-    }
-    
-    to {
-        background-color: #FFFFFF;
-        color: #1E201E;
-    }
-}
-
-@keyframes fade-out {
-    from {
-        background-color: #FFFFFF;
-        color: #1E201E;
-    }
-
-    to {
-        background-color: #343633;
-        color: #FFFFFF;
-    }
-}
-
-.item#portrait {
-    aspect-ratio: 2 / 2;
-    grid-column: 1 / span 2;
-    grid-row: 4 / span 2;
-    display: flex;
-}
-
-.item#portrait img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-}
-
-.item#techstack {
-    aspect-ratio: 6 / 2;
-    grid-column: 3 / span 6;
-    grid-row: 4 / span 2;
-}
-
-.item#techstack #header {
-    font-size: clamp(12px, 2vw, 48px);
-    color: #FFFFFF
-}
-
-.item#techstack .logos {
-    display: flex;
-    gap: 8px;
-    justify-content: left;
-    height: 100%;
-    padding: 12px;
-}
-
-.item#techstack .logos img {
-    width: 48px;
-    height: auto;
-    object-fit: contain;
-}
-
-.item#placeholder {
-    background-color: #1E201E;
-    border: none;
-}
-

@@ -2,8 +2,8 @@
 <html>
     <head>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
-        <link rel="stylesheet" href="reset.css" />
-        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <div class="container">
@@ -13,30 +13,46 @@
                     <p id="body">I'm <span id="type-target"></span><span class="cursor">|</span></p>
                     <a id="sub" href="mailto:liamberube50@gmail.com">Contact me</a>
                 </div>
-                <div class="item" id="project-carousel">
+                <div class="item" id="carousel">
                     <p id="header"></p>
-                    <button id="left"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9Imx1Y2lkZSBsdWNpZGUtY2hldnJvbi1sZWZ0LWljb24gbHVjaWRlLWNoZXZyb24tbGVmdCI+PHBhdGggZD0ibTE1IDE4LTYtNiA2LTYiLz48L3N2Zz4="/></button>
-                    <button id="right"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9Imx1Y2lkZSBsdWNpZGUtY2hldnJvbi1yaWdodC1pY29uIGx1Y2lkZS1jaGV2cm9uLXJpZ2h0Ij48cGF0aCBkPSJtOSAxOCA2LTYtNi02Ii8+PC9zdmc+"/></button>
+                    <div id="buttons">
+                        <button id="left"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9Imx1Y2lkZSBsdWNpZGUtY2hldnJvbi1sZWZ0LWljb24gbHVjaWRlLWNoZXZyb24tbGVmdCI+PHBhdGggZD0ibTE1IDE4LTYtNiA2LTYiLz48L3N2Zz4="/></button>
+                        <button id="right"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9Imx1Y2lkZSBsdWNpZGUtY2hldnJvbi1yaWdodC1pY29uIGx1Y2lkZS1jaGV2cm9uLXJpZ2h0Ij48cGF0aCBkPSJtOSAxOCA2LTYtNi02Ii8+PC9zdmc+"/></button>
+                    </div>
+                </div>
+                <div class="item" id="portrait"></div>
+                <div class="item" id="techstack">
+                    <div id="header">
+                        <p>My Techstack</p>
+                    </div>
+                    <div class="carousel-track">
+                        <img src="Assets/Python.png" alt="Python">
+                        <img src="Assets/HTML.png" alt="HTML">
+                        <img src="Assets/CSS.png" alt="CSS">
+                        <img src="Assets/JS.png" alt="JS">
+                        <img src="Assets/C++.png" alt="C++">
+                        <img src="Assets/Arduino.png" alt="Arduino">
+                        <img src="Assets/Fusion360.png" alt="Fusion360">
+
+                        <!-- repeat the same images to create seamless looping -->
+                        <img src="Assets/Python.png" alt="Python">
+                        <img src="Assets/HTML.png" alt="HTML">
+                        <img src="Assets/CSS.png" alt="CSS">
+                        <img src="Assets/JS.png" alt="JS">
+                        <img src="Assets/C++.png" alt="C++">
+                        <img src="Assets/Arduino.png" alt="Arduino">
+                        <img src="Assets/Fusion360.png" alt="Fusion360">
+                    </div>
                 </div>
                 <div class="item" id="menu">
                     <ul>
-                        <li>Home</li>
+                        <li id="selected">Home</li>
                         <li>Projects</li>
                         <li>About</li>
                         <li>Other</li>
                         <li>Other</li>
                     </ul>
                 </div>
-                <div class="item" id="portrait"><img src="Assets/placeholder.jpg"></div>
-                <div class="item" id="techstack">
-                    <p id="header">My Techstack</p>
-                    <div class="logos">
-                        <img src="Assets/HTML.png">
-                        <img src="Assets/CSS.png">
-                        <img src="Assets/JS.png">
-                    </div>
-                </div>
-                <div class="item" id="placeholder"></div>
             </div>
         </div>
         <script src="cursor.js"></script>

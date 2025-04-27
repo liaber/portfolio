@@ -5,8 +5,8 @@ let projectTitles = ["PyUI", "LED Matrix", "Robotic Arm", "Wifi-enabled Camera"]
 let projectImages = ["Assets/Python-Logo.jpg","Assets/download.jpg","Assets/images.jpg","Assets/canon_eosr8.jpg"];
 
 let currentProject = 0;
-let carousel = document.getElementById("project-carousel");
-let text = document.getElementById("project-carousel").children[0]
+let carousel = document.getElementById("carousel");
+let text = document.getElementById("carousel").children[0]
 
 setProject();
 
